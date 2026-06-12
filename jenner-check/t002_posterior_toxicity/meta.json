@@ -1,0 +1,8 @@
+{
+  "bundle": "t002_posterior_toxicity",
+  "source_file": "sas/blrm_m2.sas",
+  "source_blob_sha": "e93fc1cecf295dcd964dc910318909b3b3065888",
+  "source_commit": "88570afe7c3980566b8f464a94617a9a6bda716f",
+  "tier": "real_data",
+  "notes": "Exercises the single-agent BLRM posterior-toxicity transform logistic(log_alpha + exp(log_beta)*log(dose/ref_dose)) used verbatim in %blrm_main (lines 42-44), %blrm_stat (line 87) and %blrm_ewoc (line 159). The autoexec ships 60 deterministic mock posterior draws shaped like the PROC MCMC OUTPOST= data set (log_alpha, log_beta); the script applies the transform for four candidate doses and summarizes posterior DLT probability per dose with PROC MEANS (mean/std/quartiles). Output is monotone in dose, as the model requires."
+}

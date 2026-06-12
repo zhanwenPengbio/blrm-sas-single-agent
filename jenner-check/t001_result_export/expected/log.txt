@@ -1,0 +1,74 @@
+Jenner 0.1.0 (Unlicensed - limited to 100 observations)
+Get a license at https://jenneranalytics.com/license
+
+NOTE: Option OBS changed to 100.
+NOTE: DATA info
+
+
+NOTE: Wrote info (4 rows, 3 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: DATA dlt_all
+
+NOTE: Processing inline DATALINES (7 lines)
+
+NOTE: Read 7 rows from DATALINES.
+NOTE: Wrote dlt_all (7 rows, 4 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: DATA ewoc_all
+
+NOTE: Processing inline DATALINES (4 lines)
+
+NOTE: Read 4 rows from DATALINES.
+NOTE: Wrote ewoc_all (4 rows, 6 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: DATA sim_all
+
+NOTE: Processing inline DATALINES (3 lines)
+
+NOTE: Read 3 rows from DATALINES.
+NOTE: Wrote sim_all (3 rows, 3 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: DATA dose_selection
+
+NOTE: Processing inline DATALINES (2 lines)
+
+NOTE: Read 2 rows from DATALINES.
+NOTE: Wrote dose_selection (2 rows, 3 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: DATA sim_results
+
+NOTE: Processing inline DATALINES (1 lines)
+
+NOTE: Read 1 rows from DATALINES.
+NOTE: Wrote sim_results (1 rows, 4 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: PROC EXPORT data=info outfile=./blrm_results.xlsx
+
+NOTE: Exported 4 rows to ./blrm_results.xlsx.
+NOTE: PROC EXPORT data=dlt_all outfile=./blrm_results.xlsx
+
+NOTE: Exported 7 rows to ./blrm_results.xlsx.
+NOTE: PROC EXPORT data=EWOC_all outfile=./blrm_results.xlsx
+
+NOTE: Exported 4 rows to ./blrm_results.xlsx.
+NOTE: PROC EXPORT data=SIM_all outfile=./blrm_results.xlsx
+
+NOTE: Exported 3 rows to ./blrm_results.xlsx.
+NOTE: PROC EXPORT data=DOSE_SELECTION outfile=./blrm_results.xlsx
+
+NOTE: Exported 2 rows to ./blrm_results.xlsx.
+NOTE: PROC EXPORT data=SIM_RESULTS outfile=./blrm_results.xlsx
+
+NOTE: Exported 1 rows to ./blrm_results.xlsx.

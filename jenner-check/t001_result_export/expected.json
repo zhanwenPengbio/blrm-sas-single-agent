@@ -1,0 +1,14 @@
+{
+  "_captured_at": "2026-06-12T20:18:00Z",
+  "_captured_run_id": "r_019ebd7a30727961ba3e1c5674b4cd14",
+  "status": "ok",
+  "exit_code": 0,
+  "log_contains": [
+    "NOTE: PROC EXPORT data=info outfile=./blrm_results.xlsx",
+    "NOTE: Exported 4 rows to ./blrm_results.xlsx.",
+    "NOTE: PROC EXPORT data=DOSE_SELECTION outfile=./blrm_results.xlsx",
+    "NOTE: PROC EXPORT data=SIM_RESULTS outfile=./blrm_results.xlsx"
+  ],
+  "log_does_not_contain": ["ERROR:", "[JENNER-ERROR"],
+  "diagnostics": {"parse_warnings": [], "runtime_warnings": []}
+}
