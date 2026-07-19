@@ -50,7 +50,7 @@ blrm-sas-single-agent/
 | `blrm_sim_one` | Simulates one cohort-by-cohort BLRM trial. |
 | `blrm_sim_n` | Repeats `blrm_sim_one` and combines trial-level records. |
 | `blrm_sim_sum` | Summarizes dose-selection and patient-exposure operating characteristics. |
-| `result_export` | Exports selected analysis and simulation data sets to an Excel workbook. |
+| `result_export` | Validates and exports the current `INFO`, `DLT`, `EWOC`, `SIM`, and long-format `OC` data sets to one XLSX workbook. |
 
 The internal helper macros `make_dose_map` and `make_dose_truth_map` preserve the order of the supplied dose list and align simulated toxicity probabilities by numeric dose value.
 
@@ -185,6 +185,34 @@ blrm_sim_sum -> operating-characteristic summary
 - `Avg_Patients_Over_Toxic`
 
 The summary keeps all simulated trials in the denominator, including trials for which no dose is selected. It also validates the toxicity-scenario mapping before calculating dose-selection and exposure metrics.
+
+## Excel Export
+
+Run `sas/blrm_export.sas` after producing the analysis and simulation outputs.
+
+```sas
+%include "path/to/sas/blrm_export.sas";
+
+%result_export(
+    path=path/to/output,
+    file_name=blrm_results,
+    info=scenario_information,
+    dlt_data=dlt_all,
+    ewoc_data=ewoc_all,
+    sim_data=sim_all,
+    oc_data=oc_summary
+);
+```
+
+The macro validates all five input data sets before writing the workbook. It creates the following sheets:
+
+- `INFO`: scenario or analysis information
+- `DLT`: cohort-level DLT records
+- `EWOC`: cohort-level EWOC summaries
+- `SIM`: trial-level simulation results
+- `OC`: long-format operating-characteristic summary from `blrm_sim_sum`
+
+If a workbook with the same name already exists, it is replaced.
 
 ## Recommended Use
 
