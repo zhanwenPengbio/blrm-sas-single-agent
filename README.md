@@ -203,8 +203,10 @@ the matched comparison scenario used in the project paper and presentation,
 calculates posterior underdosing, target-toxicity, and overdosing probabilities,
 applies the static EWOC rule, and reports R-hat and effective sample size.
 
-Requirements are JAGS 4.x and the R packages `rjags` and `coda`. Run the script
-from the repository root. Generated CSV files are written to `output/`.
+Requirements are JAGS 4.x and the R packages `rjags` and `coda`. The script
+runs eight independent chains and writes pooled region probabilities, chain-level
+stability summaries, MCMC diagnostics, and chain-specific results as four CSV files
+in the current R working directory.
 
 ## Excel Export
 
