@@ -347,9 +347,10 @@ repository root:
 source("r/blrm_compare_rjags.R")
 ```
 
-The script writes R/JAGS summaries, SAS-versus-R/JAGS differences, and MCMC
-diagnostics to `output/`. Small numerical differences are expected because the
-implementations use independent MCMC samplers.
+The script runs eight independent chains and writes pooled region probabilities,
+chain-level stability summaries, MCMC diagnostics, and chain-specific results as
+four CSV files in the current R working directory. Small numerical differences are
+expected because the implementations use independent MCMC samplers.
 
 ## 10. Validation and operational use
 
