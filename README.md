@@ -32,12 +32,21 @@ blrm-sas-single-agent/
 ├── README.md
 ├── LICENSE
 ├── CITATION.cff
+├── docs/
+│   └── user-guide.md
+├── r/
+│   └── blrm_compare_rjags.R
 ├── sas/
 │   ├── blrm_m2.sas
 │   └── blrm_export.sas
+├── tests/
+│   └── test_01_... through test_08_...
 └── report/
     └── blrm_sas_technical_report.pdf
 ```
+
+See the [BLRM SAS Macro User Guide](docs/user-guide.md) for the complete
+interim-analysis, diagnostic, simulation, and export workflow.
 
 ## Main SAS Macros
 
@@ -186,6 +195,17 @@ blrm_sim_sum -> operating-characteristic summary
 
 The summary keeps all simulated trials in the denominator, including trials for which no dose is selected. It also validates the toxicity-scenario mapping before calculating dose-selection and exposure metrics.
 
+## Independent R/JAGS Check
+
+The script [`r/blrm_compare_rjags.R`](r/blrm_compare_rjags.R) implements the
+same BLRM directly in JAGS for an external implementation check. It reproduces
+the matched comparison scenario used in the project paper and presentation,
+calculates posterior underdosing, target-toxicity, and overdosing probabilities,
+applies the static EWOC rule, and reports R-hat and effective sample size.
+
+Requirements are JAGS 4.x and the R packages `rjags` and `coda`. Run the script
+from the repository root. Generated CSV files are written to `output/`.
+
 ## Excel Export
 
 Run `sas/blrm_export.sas` after producing the analysis and simulation outputs.
@@ -204,15 +224,9 @@ Run `sas/blrm_export.sas` after producing the analysis and simulation outputs.
 );
 ```
 
-The macro validates all five input data sets before writing the workbook. It creates the following sheets:
-
-- `INFO`: scenario or analysis information
-- `DLT`: cohort-level DLT records
-- `EWOC`: cohort-level EWOC summaries
-- `SIM`: trial-level simulation results
-- `OC`: long-format operating-characteristic summary from `blrm_sim_sum`
-
-If a workbook with the same name already exists, it is replaced.
+The macro validates all five input data sets before writing the workbook. It
+creates `INFO`, `DLT`, `EWOC`, `SIM`, and `OC` sheets. If a workbook with the
+same name already exists, it is replaced.
 
 ## Recommended Use
 
