@@ -1,0 +1,16 @@
+{
+  "_captured_at": "2026-06-12T20:27:00Z",
+  "_captured_run_id": "r_019ebd84d91178919e4c3d98f3bfc17f",
+  "status": "ok",
+  "exit_code": 0,
+  "log_contains": [
+    "NOTE: Wrote post_tox (60 rows, 6 columns).",
+    "NOTE: PROC MEANS"
+  ],
+  "output_contains": [
+    "pi_5           60         0.1054      0.0438           0.0727      0.0995           0.1308",
+    "pi_40          60         0.4947      0.0809           0.4414      0.4929           0.5527"
+  ],
+  "log_does_not_contain": ["ERROR:", "[JENNER-ERROR"],
+  "diagnostics": {"parse_warnings": [], "runtime_warnings": []}
+}

@@ -1,0 +1,8 @@
+{
+  "bundle": "t001_result_export",
+  "source_file": "sas/blrm_export.sas",
+  "source_blob_sha": "45ea4ba546e1ff43d90b33184c55719bbedce3b9",
+  "source_commit": "88570afe7c3980566b8f464a94617a9a6bda716f",
+  "tier": "real_data",
+  "notes": "Exercises the %result_export macro from sas/blrm_export.sas verbatim (only the OUTFILE= path separator was changed from Windows backslash to forward slash so the workbook lands in the working directory). Ships six small mock datasets shaped like the BLRM pipeline outputs the macro exports (INFO/DLT/EWOC/SIM/DOSE_SELECTION/SIM_RESULTS); dose/n/dltn follow the README input structure. All six PROC EXPORT DBMS=XLSX steps run and a valid Excel workbook is produced."
+}
